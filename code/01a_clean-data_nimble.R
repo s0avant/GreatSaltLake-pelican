@@ -34,6 +34,7 @@ SOI <- SOI %>%
 min_temp_metric <- min_temp %>%
   mutate(mean = rowMeans(.[, c("Apr", "May", "Jun", "Jul")])) %>%
   select(year = Year, mean) %>%
+  # Convert to Celsius
   mutate(mean = (mean-32)*(5/9))
 
 #~ Collapse data to annual format for study period ----
@@ -76,7 +77,7 @@ waterlvl_breeding <- waterlvl %>%
 waterlvl_season <-  waterlvl_breeding %>%
   cbind(waterlvl_fall) %>%
   mutate(landbridge_breeding =
-           case_when(min_breeding > 4194.5 ~ 0, # As per J. Neill pers comm
+           case_when(min_breeding > 4194.5 ~ 0,
                      min_breeding <= 4194.5 ~ 1))  %>%
   mutate(landbridge_fall =
            case_when(min_fall > 4194.5 ~ 0,
@@ -85,6 +86,7 @@ waterlvl_season <-  waterlvl_breeding %>%
 waterlvl_season <- waterlvl_season %>%
   select(year_nu, mean_breeding, landbridge_breeding)
 
+# Convert from feet to meters
 waterlvl_metric <- waterlvl_season %>%
   mutate(mean_m = mean_breeding * 0.3048)
 

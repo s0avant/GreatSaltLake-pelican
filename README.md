@@ -7,7 +7,7 @@ Public repository for data and code peer review of Great Salt Lake pelican popul
 - Source: Great Salt Lake Ecosystem Program - Utah Division of Wildlife Resources\
 \
 "min-temp_raw.csv"\
-- Monthly minimum temperature data (ºC) collected at the Salt Lake City International Airport weather station\
+- Monthly minimum temperature data (ºF) collected at the Salt Lake City International Airport weather station\
 - Retrieved from the National Weather Service [https://w2.weather.gov/climate/xmacis.pp?wfo=slc]\
 \
 "PDO_raw.csv"\
@@ -19,7 +19,7 @@ Public repository for data and code peer review of Great Salt Lake pelican popul
 - Retrieved from the NWS Climate Prediction Center [https://www.cpc.ncep.noaa.gov/data/indices/soi]\
 "water-levels_raw.csv"\
 \
-- Monthly water level data collected at the USGS water level gauge nearest to Gunnison Island (USGS Saline, UT)\
+- Monthly water level data (feet) collected at the USGS water level gauge nearest to Gunnison Island (USGS Saline, UT)\
 - Retrieved from USGS: Water Data for the Nation [https://waterdata.usgs.gov/monitoring-location/10010100/]\
 
 ## Code file description
