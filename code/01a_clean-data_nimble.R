@@ -9,8 +9,8 @@ library(lubridate)
 # Read in data ----
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 waterlvl <- read.csv("data/water-levels_raw.csv", sep = "")
-PDO <- read_csv("data/PDO_raw.csv")
-SOI <- read_csv("data/SOI_raw.csv")
+PDO <- read.csv("data/PDO_raw.csv")
+SOI <- read.csv("data/SOI_raw.csv")
 min_temp <- read.csv("data/min-temp_raw.csv", header = TRUE)
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
