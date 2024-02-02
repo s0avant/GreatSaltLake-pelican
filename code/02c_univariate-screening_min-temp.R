@@ -1,6 +1,6 @@
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 #                  Min Spring Temp With Time Lag - Nimble Code                 #
-#                                 05/19/2023                                   #
+#                                 02/02/2024                                   #
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 library(nimble)
 library(dplyr)
@@ -150,7 +150,7 @@ system.time(n_samples <- runMCMC(comp_mcmc,
 
 awpe.ssm.nimble <- MCMCvis::MCMCsummary(n_samples$samples)
 
-ifelse(max(awpe.ssm.nimble$Rhat) >= 1.12,
+ifelse(max(awpe.ssm.nimble$Rhat) >= 1.1,
        "Rhat indicates convergence failure",
        "Rhat indicates successful convergence")
 
