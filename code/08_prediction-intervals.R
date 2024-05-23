@@ -168,12 +168,12 @@ ggsave(plot = pi_plot_log, "output/plots/log_predicted_interval_plot.png",
 df_subset <- df %>%
   filter(year >= 2013)
 
-rmse <- data.frame(sqrt(mean((df_subset$counts - df_subset$predicted)^2)))
-write_csv(rmse, "output/rmse.csv")
+rmse_rmspe <- data.frame(rmse = sqrt(mean((df_subset$counts -
+                                             df_subset$predicted)^2)),
+                         rmspe = sqrt(mean(100 * abs(abs(df_subset$counts -
+                                                           df_subset$predicted)/df_subset$counts))^2))
 
-rmspe <- data.frame(sqrt(mean(((df_subset$counts - df_subset$predicted)/
-                                 df_subset$counts)^2)))
-write_csv(rmspe, "output/rmspe.csv")
+write_csv(rmse_rmspe, "output/rmse_rmspe.csv")
 
 pred_obs <- (df_subset$predicted - df_subset$counts)/df_subset$counts
 mean_pred_obs <- mean(pred_obs)
